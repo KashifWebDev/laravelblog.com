@@ -1,0 +1,60 @@
+<div>
+    @section('content')
+
+        <div class="main-wrapper mrb-100">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-12 main-wrapper-content">
+                        <main class="site-main">
+                            <div class="row masonry-posts">
+
+                                @foreach($articles as $article)
+                                    <div class="col-lg-4 col-md-6 grid-item">
+                                        <article class="post post-grid-style post-grid-style-two">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a  wire:navigate.hover href="{{ route('article.read', ['slug' => $article->url]) }}"{{ route('article.read', ['slug' => $article->url]) }}>
+                                                        <img src="storage/{{ $article->og_image }}" alt="post" />
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-category">
+                                                    <a class="cat" href="#">Laravel</a>
+                                                    <a class="cat" href="#">PHP</a>
+                                                </div>
+                                                <h3 class="entry-title">
+                                                    <a href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>
+                                                        {{ $article->title }}
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div class="entry-user">
+                                                <div class="thumb">
+                                                    <img src="{{ asset('avatars/admin.jpg') }}" alt="Thumb" />
+                                                </div>
+                                                <div class="info">
+                                                    <div class="author-name">
+                                                        <a href="#">Admin</a>
+                                                    </div>
+                                                    <div class="entry-date">{{ \Carbon\Carbon::parse($article->created_at)->format('l, F j, Y') }}</div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                @endforeach
+
+                            </div>
+                        </main>
+                        <div class="load-more-btn-area style-one">
+                            <a href="#" wire:navigate.hover class="load-more-btn">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--~./ end main wrapper ~-->
+
+    @endsection
+</div>

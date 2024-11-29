@@ -1,36 +1,310 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Blog And Magazine HTML5 Template" />
+    <meta name="keywords"
+          content="HTML5, Template, Design, blog, blogger, clean, flat, food, html, magazine, modern, news, personal, photographer, template, white  " />
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            <livewire:layout.navigation />
+    <!-- Titles
+    ================================================== -->
+    <title>EasyArt | Personal Blog HTML Template</title>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/android-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-144x144.png" />
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+    <!-- Custom Font
+    ================================================== -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/simple-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/color/color-four.css') }}" />
+
+    <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+</head>
+    <body class="bg-white-smoke">
+        <div class="preloader">
+            <div class="preloader-inner">
+                <div class="preloader-icon">
+                    <span></span>
+                    <span></span>
+                </div><!-- /preloader-icon -->
+            </div><!-- /preloader-inner -->
         </div>
+
+        <div class="site-content">
+            <header class="site-header default-header-style style-one intro-element">
+                <div class="header-download-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="download-area-content">
+                                    <div class="download-text">"Stay tuned! We're soon uploading our premium courses for free!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-top-area">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-4">
+                                <div class="intro-socail-share">
+                                    <div class="share-alt"><span class="fa fa-share-alt"></span></div>
+                                    <div class="socail-share">
+                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                        <a href="#"><span class="fab fa-twitter"></span></a>
+                                        <a href="#"><span class="fab fa-instagram"></span></a>
+                                        <a href="#"><span class="fab fa-pinterest-p "></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="site-branding text-center">
+                                    <a href="{{ route('home') }}"  wire:navigate.hover>
+                                        <img src="{{ asset('logo.png') }}" alt="LaravelBlogs Logo" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="header-right-area">
+                                    <div class="search-wrap">
+                                        <div class="search-btn">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div class="search-form">
+                                            <form action="#">
+                                                <input type="search" placeholder="Search">
+                                                <button type="submit"><i class="fas fa-search"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="hamburger-menus">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="site-navigation">
+                                    <nav class="navigation">
+                                        <div class="menu-wrapper">
+                                            <div class="menu-content">
+                                                <ul class="mainmenu">
+                                                    <li><a wire:navigate.hover href="{{ route('home') }}">Home</a></li>
+                                                    <li><a wire:navigate.hover href="{{ route('article.tutorials') }}">Premium Tutorials</a></li>
+                                                    <li><a wire:navigate.hover href="{{ route('article.courses') }}">Courses</a></li>
+                                                    <li><a wire:navigate.hover href="{{ route('article.tips') }}">Quick Tips</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-sidebar-menu sidebar-menu">
+                    <div class="overlaybg"></div>
+                </div>
+            </header>
+            <div id="sticky-header" class="active"></div>
+
+
+
+            @yield('content')
+
+            <div class="subscribe-section style-two bg-white pd-t-100-i">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="subscribe-section-content mr-0">
+                                <div class="section-header">
+                                    <h2 class="title">Subscribe</h2>
+                                    <p>Subscribe Now To Get Daily Updates</p>
+                                </div>
+                                <div class="subscribe-form">
+                                    <!-- Subscribe form -->
+                                    <form class="dv-form" id="mc-form">
+                                        <div class="form-group">
+                                            <input id="mc-email" name="EMAIL" placeholder="Email Address" type="email" />
+                                            <button class="btn btn-default" name="Subscribe" id="subscribe-btn" type="submit">
+                                                Subscribe
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="site-footer bg-white pd-t-100">
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        Start Footer Widget Area
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div class="footer-widget-area">
+                    <div class="container">
+                        <div class="row">
+                            <!--~~~~~ Start Widget Location ~~~~~-->
+                            <div class="col-lg-4 col-md-6">
+                                <aside class="widget bt-location-widget">
+                                    <div class="widget-content">
+                                        <a class="footer-logo" href="index09.html">
+                                            <img src="{{ asset('logo.png') }}" alt="Footer Logo">
+                                        </a>
+                                        <div class="info-box">
+                                            <p>
+                                                Dannmondi 15 number Sheen Darus Salam. 112/B Road 8A,
+                                                Dhanmondi.
+                                            </p>
+                                        </div>
+                                        <div class="info-box">
+                                            <p>
+                                                <a href="mailto:admin@laravelblogs.com">admin@laravelblogs.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                            <!--~./ end location widget ~-->
+
+                            <!--~~~~~ Start Widget Links ~~~~~-->
+{{--                            <div class="col-lg-2 col-md-6">--}}
+{{--                                <aside class="widget widget_links">--}}
+{{--                                    <h2 class="widget-title">Quick Links</h2>--}}
+{{--                                    <div class="widget-content">--}}
+{{--                                        <ul>--}}
+{{--                                            <li><a href="#">About Us</a></li>--}}
+{{--                                            <li><a href="#">Contact Us</a></li>--}}
+{{--                                            <li><a href="#">Careers</a></li>--}}
+{{--                                            <li><a href="#">Services</a></li>--}}
+{{--                                            <li><a href="#">Stories</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </aside>--}}
+{{--                            </div>--}}
+{{--                            <!--~./ end links widget ~-->--}}
+{{--                            <!--~~~~~ Start Widget Links ~~~~~-->--}}
+{{--                            <div class="col-lg-2 col-md-6">--}}
+{{--                                <aside class="widget widget_links">--}}
+{{--                                    <h2 class="widget-title">Categories</h2>--}}
+{{--                                    <div class="widget-content">--}}
+{{--                                        <ul>--}}
+{{--                                            <li><a href="#">Lifestyle</a></li>--}}
+{{--                                            <li><a href="#">Travel</a></li>--}}
+{{--                                            <li><a href="#">Food & Drinks</a></li>--}}
+{{--                                            <li><a href="#">Inspiration</a></li>--}}
+{{--                                            <li><a href="#">Decoration</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </aside>--}}
+{{--                            </div>--}}
+{{--                            <!--~./ end links widget ~-->--}}
+
+{{--                            <!--~~~~~ Start Instagram Widget~~~~~-->--}}
+{{--                            <div class="col-lg-4 col-md-6">--}}
+{{--                                <aside class="widget bt-instafeed-widget style-four">--}}
+{{--                                    <h4 class="widget-title">Instagram</h4>--}}
+{{--                                    <div class="widget-content">--}}
+{{--                                        <ul id="instafeed">--}}
+{{--                                            <li class="feed-item">--}}
+{{--                                                <a href="#">--}}
+{{--                                                    <img src="assets/images/widget/instagram/3/1.jpg" alt="#">--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="feed-item">--}}
+{{--                                                <a href="#">--}}
+{{--                                                    <img src="assets/images/widget/instagram/3/2.jpg" alt="#">--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="feed-item">--}}
+{{--                                                <a href="#">--}}
+{{--                                                    <img src="assets/images/widget/instagram/3/3.jpg" alt="#">--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                        <a href="#">visit us on instagram</a>--}}
+{{--                                    </div>--}}
+{{--                                </aside>--}}
+{{--                            </div>--}}
+                            <!--~./ end instagram widget ~-->
+                        </div>
+                    </div>
+                </div>
+                <!--~./ end footer widgets area ~-->
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                            Start Footer Bottom Area
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div class="footer-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer-bottom-content">
+                                    <div class="copyright-text text-center">
+                                        <p>
+                                            Copyright - 2024
+                                            <a href="{{ route('home') }}">Laravel Blogs</a>
+                                        </p>
+                                    </div>
+                                    <!--~./ end copyright text ~-->
+                                </div>
+                            </div>
+                            <!--~./ col-12 ~-->
+                        </div>
+                    </div>
+                </div>
+                <!--~./ end footer bottom area ~-->
+            </footer>
+
+        </div>
+
+        <script src="{{ asset('assets/js/jquery.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins.js') }}"></script>
+        <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/js/simple-scrollbar.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/js/theia-sticky-sidebar.min.js') }}"></script>
+        <script src="{{ asset('assets/js/ResizeSensor.min.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/scrolla.jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+    @livewireScripts
     </body>
 </html>
