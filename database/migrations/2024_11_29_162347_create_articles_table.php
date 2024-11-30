@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('url', 500);
             $table->string('title', 500);
-            $table->text('content');
+            $table->longText('content');
             $table->string('canonical_url', 500)->nullable();
             $table->string('og_title', 500)->nullable();
             $table->string('og_type', 500)->nullable();
@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('twitter_image', 500)->nullable();
             $table->string('duration', 500)->nullable();
             $table->string('word_count', 500)->nullable();
+            $table->integer('views')->default(0);
+            $table->string('source');
             $table->timestamps();
         });
     }
