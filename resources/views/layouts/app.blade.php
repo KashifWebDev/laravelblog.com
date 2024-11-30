@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>{{ $metaTitle ? $metaTitle.' | Laravel Blogs' : 'Laravel Blogs' }}</title>
+    <title>{{ isset($metaTitle) ? $metaTitle.' | Laravel Blogs' : 'Laravel Blogs' }}</title>
 
     <meta name="description" content="{{ $metaDescription ?? 'Laravel Blogs' }}">
     <meta name="keywords" content="{{ $metaKeywords ?? 'Laravel Blogs, Laravel, Blogs' }}">
