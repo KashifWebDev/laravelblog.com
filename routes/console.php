@@ -10,5 +10,4 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
-Schedule::command(TestingCommand::class)->everySecond();
-//Schedule::command(ScrapArticles::class)->everySecond();
+Schedule::command(ScrapArticles::class)->everySecond();
