@@ -107,6 +107,21 @@ class ScrapArticle
                 'word_count' => $wordCount,
             ]);
 
+            \Log::info('Inserting Article:', [
+                'title' => $heading,
+                'url' => $url,
+                'canonical_url' => $canonical,
+                'og_title' => $ogTitle,
+                'og_type' => $ogType,
+                'og_site_name' => $ogSiteName,
+                'og_image' => $imagePath, // Store the local image path
+                'og_url' => $ogUrl,
+                'twitter_title' => $twitterTitle,
+                'twitter_image' => $twitterImage,
+                'duration' => $duration,
+                'word_count' => $wordCount,
+            ]);
+
         } catch (RequestException $e) {
             Log::error('Error scraping article: ' . $e->getMessage());
         }

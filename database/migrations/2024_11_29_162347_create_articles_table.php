@@ -13,19 +13,19 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
-            $table->string('title');
+            $table->string('url', 500);
+            $table->string('title', 500);
             $table->text('content');
-            $table->string('canonical_url')->nullable();
-            $table->string('og_title')->nullable();
-            $table->string('og_type')->nullable();
-            $table->string('og_site_name')->nullable();
-            $table->string('og_image')->nullable(); // Path to locally stored image
-            $table->string('og_url')->nullable();
-            $table->string('twitter_title')->nullable();
-            $table->string('twitter_image')->nullable();
-            $table->string('duration')->nullable();
-            $table->string('word_count')->nullable();
+            $table->string('canonical_url', 500)->nullable();
+            $table->string('og_title', 500)->nullable();
+            $table->string('og_type', 500)->nullable();
+            $table->string('og_site_name', 500)->nullable();
+            $table->string('og_image', 500)->nullable(); // Path to locally stored image
+            $table->string('og_url', 500)->nullable();
+            $table->string('twitter_title', 500)->nullable();
+            $table->string('twitter_image', 500)->nullable();
+            $table->string('duration', 500)->nullable();
+            $table->string('word_count', 500)->nullable();
             $table->timestamps();
         });
     }
