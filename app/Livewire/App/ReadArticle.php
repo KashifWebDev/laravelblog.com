@@ -18,6 +18,22 @@ class ReadArticle extends Component
         $this->article = Article::where('slug', $slug)->first();
         $this->randomArticles = Article::inRandomOrder()->limit(3)->get();
         $this->article->increment('views');
+        $this->setSeoTags();
+    }
+
+    public function setSeoTags()
+    {
+        // Set dynamic SEO tags
+        view()->share('metaTitle', $this->article->title);
+        $originalDescription = mb_strimwidth($this->article->content, 0, 300, '...');
+        // Remove HTML tags
+        $cleanedDescription = strip_tags($originalDescription);
+        $cleanedDescription = html_entity_decode($cleanedDescription, ENT_QUOTES, 'UTF-8');
+        $cleanedDescription = trim($cleanedDescription);
+        $metaDescription = substr($cleanedDescription, 0, 160);
+
+        view()->share('metaDescription', $metaDescription);
+        view()->share('metaKeywords', str_replace(" ", ',', $this->article->title));
     }
 
     public function render()

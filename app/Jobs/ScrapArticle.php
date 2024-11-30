@@ -73,7 +73,7 @@ class ScrapArticle
                 // Store the image in the storage folder
                 $imageData = $client->get($ogImage)->getBody();
                 // Store the image in the public storage folder (accessible publicly)
-                $imagePath = 'articles/'.$imageName.'-'.uniqid();
+                $imagePath = 'articles/'.$imageName.'-'.uniqid().'.jpg';
 
                 // Store the image in the public directory
                 $imageData = $client->get($ogImage)->getBody();
