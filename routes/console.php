@@ -1,5 +1,6 @@
 <?php
 
+use App\Console\Commands\GenerateSitemap;
 use App\Console\Commands\ScrapArticles;
 use App\Console\Commands\TestingCommand;
 use Illuminate\Foundation\Inspiring;
@@ -10,4 +11,5 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
-Schedule::command(ScrapArticles::class)->everySecond();
+Schedule::command(ScrapArticles::class)->hourly();
+Schedule::command(GenerateSitemap::class)->hourly();
