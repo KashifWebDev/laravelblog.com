@@ -13,8 +13,8 @@
                                         <article class="post post-grid-style post-grid-style-two">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a  wire:navigate.hover href="{{ route('article.read', ['slug' => $article->url]) }}"{{ route('article.read', ['slug' => $article->url]) }}>
-                                                        <img src="storage/{{ $article->og_image }}" alt="post" />
+                                                    <a  wire:navigate.hover href="{{ route('article.read', ['slug' => $article->slug]) }}">
+                                                        <img src="storage/{{ $article->image }}" alt="post" />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -25,7 +25,7 @@
                                                     <a class="cat" href="#">PHP</a>
                                                 </div>
                                                 <h3 class="entry-title">
-                                                    <a href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>
+                                                    <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
                                                         {{ $article->title }}
                                                     </a>
                                                 </h3>
@@ -47,9 +47,6 @@
 
                             </div>
                         </main>
-                        <div class="load-more-btn-area style-one">
-                            <a href="#" wire:navigate.hover class="load-more-btn">Explore More</a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -13,8 +13,8 @@ class Home extends Component
 
     public function mount()
     {
-        $this->featured = Article::select('url', 'title', 'duration', 'word_count', 'count', 'og_image') ->orderBy('views', 'asc')->limit(4)->get();
-        $this->articles = Article::select('url', 'title', 'duration', 'word_count', 'count', 'og_image')
+        $this->featured = Article::select('slug', 'title', 'duration', 'word_count', 'views', 'image') ->orderBy('views', 'asc')->limit(4)->get();
+        $this->articles = Article::select('slug', 'title', 'duration', 'word_count', 'views', 'image')
             ->orderBy('views', 'asc')
             ->skip(2) // Skip the first 2 articles
             ->take(9) // Get the next 9 articles

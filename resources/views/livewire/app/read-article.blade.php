@@ -12,7 +12,7 @@
                     <div class="container">
                         <div class="post-thumbnail-area">
                             <figure class="post-thumb" style="text-align: -webkit-center">
-                                <img src="{{ asset('storage/' . $article->og_image) }}" alt="Blog Image" />
+                                <img src="{{ asset('storage/' . $article->image) }}" alt="Blog Image" />
                             </figure>
                         </div>
                         <div class="entry-header">
@@ -88,8 +88,8 @@
                                     <article class="post post-grid-style post-grid-style-two">
                                         <div class="entry-thumb">
                                             <figure class="thumb-wrap">
-                                                <a href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>
-                                                    <img src="{{ asset('storage/' . $article->og_image) }}" alt="post" />
+                                                <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
+                                                    <img src="{{ asset('storage/' . $article->image) }}" alt="post" />
                                                 </a>
                                             </figure>
                                         </div>
@@ -99,7 +99,7 @@
                                                 <a class="cat" href="#">Laravel</a>
                                             </div>
                                             <h3 class="entry-title">
-                                                <a href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>
+                                                <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
                                                     {{ $article->title }}
                                                 </a>
                                             </h3>

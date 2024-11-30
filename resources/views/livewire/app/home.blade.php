@@ -9,14 +9,14 @@
                                 <article class="post hentry post-slider-four slider-four-one">
                                     <div class="entry-thumb">
                                         <figure class="thumb-wrap">
-                                            <a href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>
-                                                <img src="storage/{{ $article->og_image }}" alt="{{ $article->title }}" />
+                                            <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
+                                                <img src="storage/{{ $article->image }}" alt="{{ $article->title }}" />
                                             </a>
                                         </figure>
                                     </div>
                                     <div class="content-entry-wrap">
                                         <h3 class="entry-title">
-                                            <a href="{{ route('article.read', ['slug' => $article->url]) }}" {{ route('article.read', ['slug' => $article->url]) }}>{{ $article->title }}</a>
+                                            <a href="{{ route('article.read', ['slug' => $article->slug]) }}">{{ $article->title }}</a>
                                         </h3>
                                         <div class="entry-meta-content">
                                             <div class="entry-author">
@@ -29,7 +29,7 @@
                                         <div class="entry-content">
                                             <div class="read-more-share">
                                                 <div class="read-more-wrap">
-                                                    <a class="read-more" href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>Read More</a>
+                                                    <a class="read-more" href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>Read More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,8 +56,8 @@
                                         <article class="post post-grid-style post-grid-style-two">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a  wire:navigate.hover href="{{ route('article.read', ['slug' => $article->url]) }}"{{ route('article.read', ['slug' => $article->url]) }}>
-                                                        <img src="storage/{{ $article->og_image }}" alt="post" />
+                                                    <a  wire:navigate.hover href="{{ route('article.read', ['slug' => $article->slug]) }}">
+                                                        <img src="storage/{{ $article->image }}" alt="post" />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -68,7 +68,7 @@
                                                     <a class="cat" href="#">PHP</a>
                                                 </div>
                                                 <h3 class="entry-title">
-                                                    <a href="{{ route('article.read', ['slug' => $article->url]) }}" wire:navigate.hover>
+                                                    <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
                                                         {{ $article->title }}
                                                     </a>
                                                 </h3>
@@ -91,7 +91,7 @@
                             </div>
                         </main>
                         <div class="load-more-btn-area style-one">
-                            <a href="#" wire:navigate.hover class="load-more-btn">Explore More</a>
+                            <a href="{{ route('article.tutorials') }}" wire:navigate.hover class="load-more-btn">Explore More</a>
                         </div>
                     </div>
                 </div>

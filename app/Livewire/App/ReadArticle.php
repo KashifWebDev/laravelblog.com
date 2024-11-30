@@ -15,7 +15,7 @@ class ReadArticle extends Component
     public function mount($slug)
     {
         $this->slug = $slug;
-        $this->article = Article::where('url', $slug)->first();
+        $this->article = Article::where('slug', $slug)->first();
         $this->randomArticles = Article::inRandomOrder()->limit(3)->get();
         $this->article->increment('views');
     }

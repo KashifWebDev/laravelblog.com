@@ -4,7 +4,9 @@ namespace App\Jobs;
 use App\Models\Article;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Symfony\Component\DomCrawler\Crawler;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Bus\Queueable;
@@ -32,6 +34,14 @@ class ScrapArticle
     {
         Log::info("Scrap article job started for ".$this->url);
         $url = $this->url;  // Get the URL passed when the job is dispatched
+
+        $slug = Str::replaceFirst('https://laraveldaily.com/post/', '', $url);
+
+        if (Article::where('slug', $slug)->exists()) {
+            Log::info("Article with slug {$slug} already exists. Skipping scraping.");
+            return; // Early return to skip scraping
+        }
+
         $cookies = env("LARAVELDAILY_COOKIE");
 
         try {
@@ -47,19 +57,12 @@ class ScrapArticle
             $html = $response->getBody()->getContents();
             $crawler = new Crawler($html);
 
-            // Extract Canonical URL
-            $canonical = $crawler->filter('link[rel="canonical"]')->attr('href');
+            $dateText = $crawler->filter('time')->text();
+            $date = trim(explode('·', $dateText)[0]); // Get only the date part
+            $createdAt = Carbon::createFromFormat('F d, Y', $date)->format('Y-m-d H:i:s');
 
-            // Extract Open Graph and Twitter tags
-            $ogTitle = $crawler->filter('meta[property="og:title"]')->attr('content');
-            $ogType = $crawler->filter('meta[property="og:type"]')->attr('content');
-            $ogSiteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
+
             $ogImage = $crawler->filter('meta[property="og:image"]')->attr('content');
-            $ogUrl = $crawler->filter('meta[property="og:url"]')->attr('content');
-
-            // Extract Twitter card information
-            $twitterTitle = $crawler->filter('meta[name="twitter:title"]')->attr('content');
-            $twitterImage = $crawler->filter('meta[name="twitter:image"]')->attr('content');
 
             // Download the OG image and store it locally
             $imagePath = null;
@@ -94,33 +97,12 @@ class ScrapArticle
             Article::create([
                 'title' => $heading,
                 'content' => $content,
-                'url' => $url,
-                'canonical_url' => $canonical,
-                'og_title' => $ogTitle,
-                'og_type' => $ogType,
-                'og_site_name' => $ogSiteName,
-                'og_image' => $imagePath, // Store the local image path
-                'og_url' => $ogUrl,
-                'twitter_title' => $twitterTitle,
-                'twitter_image' => $twitterImage,
+                'slug' => $slug,
+                'image' => $imagePath, // Store the local image path
                 'duration' => $duration,
                 'word_count' => $wordCount,
-                'source' => 'https://laraveldaily.com/'
-            ]);
-
-            \Log::info('Inserting Article:', [
-                'title' => $heading,
-                'url' => $url,
-                'canonical_url' => $canonical,
-                'og_title' => $ogTitle,
-                'og_type' => $ogType,
-                'og_site_name' => $ogSiteName,
-                'og_image' => $imagePath, // Store the local image path
-                'og_url' => $ogUrl,
-                'twitter_title' => $twitterTitle,
-                'twitter_image' => $twitterImage,
-                'duration' => $duration,
-                'word_count' => $wordCount,
+                'source' => 'https://laraveldaily.com/',
+                'created_at' => $createdAt // Save the date here
             ]);
 
         } catch (RequestException $e) {

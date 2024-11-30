@@ -12,7 +12,7 @@ class Tutorials extends Component
 
     public function mount()
     {
-        $this->articles = Article::select('url', 'title', 'duration', 'word_count', 'count', 'og_image')
+        $this->articles = Article::select('slug', 'title', 'duration', 'word_count', 'views', 'image')
             ->orderBy('created_at', 'asc')
             ->get();
     }
