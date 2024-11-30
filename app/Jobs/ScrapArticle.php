@@ -105,6 +105,8 @@ class ScrapArticle
                 'created_at' => $createdAt // Save the date here
             ]);
 
+            \Log::info(' ========== Created date is '. $createdAt.' =================');
+
         } catch (RequestException $e) {
             Log::error('Error scraping article: ' . $e->getMessage());
         }
