@@ -23,3 +23,5 @@ yarn-error.log
 /.zed
 .idea
 .htaccess
+composer.lock
+package-lock.json
