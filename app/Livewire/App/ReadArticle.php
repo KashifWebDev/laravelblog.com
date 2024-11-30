@@ -34,6 +34,8 @@ class ReadArticle extends Component
 
         view()->share('metaDescription', $metaDescription);
         view()->share('metaKeywords', str_replace(" ", ',', $this->article->title));
+        view()->share('metaPic', asset('storage/' . $this->article->image));
+        view()->share('ogType', 'article');
     }
 
     public function render()

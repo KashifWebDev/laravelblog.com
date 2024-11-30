@@ -40,6 +40,29 @@
     <meta property="og:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
+
+    <meta name="description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
+    <meta itemprop="description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta itemprop="image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.laravelblogs.com/post/mysql-functions-examples-laravel-raw-queries" />
+    <meta property="og:type" content="{{ isset($ogType) ? 'article' : 'website' }}" />
+    <meta property="og:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
+    <meta property="og:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta property="og:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
+    <meta name="twitter:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta name="twitter:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
+
+
+
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/android-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-144x144.png" />
