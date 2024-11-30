@@ -16,6 +16,7 @@ class ScrapArticles extends Command
 
     public function handle()
     {
+        Log::info('ScrapArticel was just ran!');
         // Step 1: URL of the page that lists all articles
         $listingUrl = 'https://laraveldaily.com/tag/premium-tutorials'; // Replace with the URL of the articles listing page
         $cookies = env("LARAVELDAILY_COOKIE");
