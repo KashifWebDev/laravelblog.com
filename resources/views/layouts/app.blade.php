@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php $desc = 'Discover the ultimate resource for Laravel and PHP development. Access in-depth tutorials, expert coding tips, and the latest tools and trends to elevate your skills. Stay ahead with insights into cutting-edge techniques and best practices for building robust, scalable web applications."
 
+This version includes strategic keywords like "ultimate resource," "in-depth tutorials," "cutting-edge techniques," and "scalable web applications" to improve search rankings while keeping the content engaging and informative'; ?>
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,31 +36,31 @@
 
     <title>{{ isset($metaTitle) ? $metaTitle.' | Laravel Blogs' : 'Laravel Blogs' }}</title>
 
-    <meta name="description" content="{{ $metaDescription ?? 'Laravel Blogs' }}">
+    <meta name="description" content="{{ $metaDescription ?? $desc }}">
     <meta name="keywords" content="{{ $metaKeywords ?? 'Laravel Blogs, Laravel, Blogs' }}">
     <meta property="og:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}">
     <meta property="og:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
 
-    <meta name="description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta name="description" content="{{ $metaDescription ?? $desc }}" />
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
-    <meta itemprop="description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta itemprop="description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta itemprop="image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.laravelblogs.com/post/mysql-functions-examples-laravel-raw-queries" />
     <meta property="og:type" content="{{ isset($ogType) ? 'article' : 'website' }}" />
     <meta property="og:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
-    <meta property="og:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta property="og:description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta property="og:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
-    <meta name="twitter:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}" />
+    <meta name="twitter:description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta name="twitter:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
 
