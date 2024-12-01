@@ -90,14 +90,6 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-        <div class="preloader">
-            <div class="preloader-inner">
-                <div class="preloader-icon">
-                    <span></span>
-                    <span></span>
-                </div><!-- /preloader-icon -->
-            </div><!-- /preloader-inner -->
-        </div>
 
         <div class="site-content">
             <header class="site-header default-header-style style-one intro-element">
