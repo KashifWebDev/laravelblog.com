@@ -25,13 +25,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        $logFolderName = date('Y-m-d').'/'. date('H').':00';
-        Log::getLogger()->pushHandler(new StreamHandler(storage_path('logs/' . $logFolderName . '/laravel.log'), Logger::DEBUG));
+        $logFolderName = date('Y-m-d').'/'. date('H').'_00';
 
         // Ensure the directory exists
         $logPath = storage_path('logs/' . $logFolderName);
         if (!is_dir($logPath)) {
             mkdir($logPath, 0777, true);
         }
+
+        Log::getLogger()->pushHandler(new StreamHandler(storage_path('logs/' . $logFolderName . '/laravel.log'), Logger::DEBUG));
     }
 }
