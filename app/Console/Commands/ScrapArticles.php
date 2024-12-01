@@ -62,20 +62,4 @@ class ScrapArticles extends Command
             return 'Error: ' . $e->getMessage();
         }
     }
-
-    private function scrapeArticleContent($url, $client)
-    {
-        try {
-            // Fetch article content using the code you've already shared
-            $response = $client->get($url);
-            $html = $response->getBody()->getContents();
-            $crawler = new Crawler($html);
-            $articleContent = $crawler->filter('article')->html();
-
-            Log::info("Article content for {$url}:");
-            Log::info($articleContent);
-        } catch (RequestException $e) {
-            Log::error('Error while fetching article: ' . $e->getMessage());
-        }
-    }
 }
