@@ -32,15 +32,15 @@ class ScrapArticle
      */
     public function handle()
     {
-        Log::info("Scrap article job started for ".$this->url);
         $url = $this->url;  // Get the URL passed when the job is dispatched
 
         $slug = Str::replaceFirst('https://laraveldaily.com/post/', '', $url);
 
         if (Article::where('slug', $slug)->exists()) {
-            Log::info("Article with slug {$slug} already exists. Skipping scraping.");
+            Log::info("[-] Article with slug {$slug} already exists. Skipping scraping.");
             return; // Early return to skip scraping
         }
+        Log::info("[+] Scrap article job started for ".$this->url);
 
         $cookies = env("LARAVELDAILY_COOKIE");
 
