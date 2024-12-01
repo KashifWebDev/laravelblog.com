@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,5 +24,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Schema::defaultStringLength(191);
+
+        Log::getLogger()->pushHandler(new StreamHandler(storage_path('logs/' . date('Y-m-d-H') . '/laravel.log'), Logger::DEBUG));
+
+        // Ensure the directory exists
+        $logPath = storage_path('logs/' . date('Y-m-d-H'));
+        if (!is_dir($logPath)) {
+            mkdir($logPath, 0777, true);
+        }
     }
 }
