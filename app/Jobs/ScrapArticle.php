@@ -98,14 +98,13 @@ class ScrapArticle
                 'title' => $heading,
                 'content' => $content,
                 'slug' => $slug,
-                'image' => $imagePath, // Store the local image path
+                'image' => $imagePath,
                 'duration' => $duration,
                 'word_count' => $wordCount,
                 'source' => 'https://laraveldaily.com/',
-                'created_at' => $createdAt // Save the date here
+                'created_at' => $createdAt
             ]);
 
-            \Log::info(' ========== Created date is '. $createdAt.' =================');
 
         } catch (RequestException $e) {
             Log::error('Error scraping article: ' . $e->getMessage());
