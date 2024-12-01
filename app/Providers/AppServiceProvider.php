@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Log::getLogger()->pushHandler(new StreamHandler(storage_path('logs/' . $logFolderName . '/laravel.log'), Logger::DEBUG));
 
         // Ensure the directory exists
-        $logPath = storage_path('logs/' . $logFolderName;
+        $logPath = storage_path('logs/' . $logFolderName);
         if (!is_dir($logPath)) {
             mkdir($logPath, 0777, true);
         }
