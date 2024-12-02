@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug');
-            $table->longText('content');
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->longText('content')->nullable();
+            $table->enum('type', ['heading', 'link'])->default('heading');
             $table->timestamps();
         });
     }

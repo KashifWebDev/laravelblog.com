@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('words');
             $table->string('published_at');
             $table->string('tags');
-            $table->text('about');
+            $table->text('content');
             $table->string('image');
             $table->timestamps();
         });
