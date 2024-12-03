@@ -33,7 +33,7 @@ class ScrapLaravelDailyCourseSingleLesson implements ShouldQueue
     {
         Log::info("[+] Scrap lesson text content for ".$this->url);
 
-        $cookies = env("LARAVELDAILY_COOKIE");
+        $cookies = config("app.cookies.laraveldaily");
 
         try {
             $client = new Client([
@@ -44,11 +44,20 @@ class ScrapLaravelDailyCourseSingleLesson implements ShouldQueue
                 'verify' => false,
             ]);
 
-            $response = $client->get($url);
+            $response = $client->get($this->url);
             $html = $response->getBody()->getContents();
             $crawler = new Crawler($html);
 
-            $content = $crawler->filter('article')->html();
+            if ($crawler->filter('article')->count() > 0) {
+                $content = $crawler->filter('article')->html();
+            }elseif($crawler->filter('#player')->count() > 0){
+                $src = $crawler->filter('#player')->attr('src');
+                $content = '<iframe src="'.$src.'" width="640"
+                            height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+            }else{
+                $content='No content found';
+            }
+
 
             Lesson::whereId($this->lessonID)->update(['content' => $content]);
 

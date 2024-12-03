@@ -18,7 +18,7 @@ class ScrapLaravelDailyCourseLessons implements ShouldQueue
 {
     use Queueable;
 
-    public function __construct(public string $url)
+    public function __construct(public string $url, public int $id)
     {
 
     }
@@ -27,7 +27,7 @@ class ScrapLaravelDailyCourseLessons implements ShouldQueue
     {
         Log::info("[+] Scrap Lesson started for ".$this->url);
 
-        $cookies = env("LARAVELDAILY_COOKIE");
+        $cookies = config("app.cookies.laraveldaily");
 
         try {
             $client = new Client([
@@ -89,13 +89,17 @@ class ScrapLaravelDailyCourseLessons implements ShouldQueue
             });
 
             foreach ($results as $result) {
-                Lesson::create([
+                $savedLesson = Lesson::create([
+                    'course_id' => $this->id,
                     'title' => $result['text'],
-                    'slug' => $result['type'] == 'link' ? $result['href'] : '',
-                    'content' => '',
+                    'slug' => $result['type'] == 'link' ? explode('/', $result['href'])[5] : null,
+                    'content' => null,
                     'type' => $result['type']
                 ]);
-                dispatch(new ScrapLaravelDailyCourseSingleLesson());
+
+                if($result['type'] == 'link')
+                    dispatch(new ScrapLaravelDailyCourseSingleLesson($savedLesson->id, $result['href']));
+
             }
 
 

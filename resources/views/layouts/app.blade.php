@@ -159,8 +159,8 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
                                             <div class="menu-content">
                                                 <ul class="mainmenu">
                                                     <li><a wire:navigate.hover href="{{ route('home') }}">Home</a></li>
+                                                    <li><a wire:navigate.hover href="{{ route('courses.index') }}">Premium Courses</a></li>
                                                     <li><a wire:navigate.hover href="{{ route('article.tutorials') }}">Premium Tutorials</a></li>
-                                                    <li><a wire:navigate.hover href="{{ route('article.courses') }}">Courses</a></li>
                                                     <li><a wire:navigate.hover href="{{ route('article.tips') }}">Quick Tips</a></li>
                                                 </ul>
                                             </div>

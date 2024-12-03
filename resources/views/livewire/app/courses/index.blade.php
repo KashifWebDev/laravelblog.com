@@ -7,7 +7,7 @@
                         <main class="site-main">
                             <div class="row masonry-posts">
 
-                                @foreach($articles as $article)
+                                @foreach($courses as $course)
                                     <div class="col-lg-4 col-md-6 grid-item">
                                         <article class="post post-grid-style post-grid-style-two">
                                             <div class="entry-thumb">

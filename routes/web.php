@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
 Route::get('/post/{slug}', ReadArticle::class)->name('article.read');
-Route::get('/courses', Courses::class)->name('article.courses');
 Route::get('/premium-tutorials', Tutorials::class)->name('article.tutorials');
 Route::get('/tips', QuickTips::class)->name('article.tips');
+
+Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
+    Route::get('/', Courses\Index::class)->name('index');
+});
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -24,6 +27,3 @@ Route::view('profile', 'profile')
 
 require __DIR__.'/auth.php';
 
-Route::get('/scrap', function (){
-    ScrapArticle::dispatch('https://laraveldaily.com/post/multi-step-form-vue-inertia-laravel-breeze');
-});

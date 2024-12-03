@@ -42,7 +42,7 @@ class ScrapArticle
         }
         Log::info("[+] Scrap article job started for ".$this->url);
 
-        $cookies = env("LARAVELDAILY_COOKIE");
+        $cookies = config("app.cookies.laraveldaily");
 
         try {
             $client = new Client([

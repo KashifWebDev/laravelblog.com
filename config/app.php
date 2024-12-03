@@ -123,4 +123,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'cookies' => [
+        'laraveldaily' => env('LARAVELDAILY_COOKIE', '123'),
+    ]
 ];
