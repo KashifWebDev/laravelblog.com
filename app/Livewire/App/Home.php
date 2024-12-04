@@ -3,12 +3,14 @@
 namespace App\Livewire\App;
 
 use App\Models\Article;
+use App\Models\Course;
 use Livewire\Component;
 
 class Home extends Component
 {
     public $featured;
     public $articles;
+    public $courses;
 
 
     public function mount()
@@ -19,6 +21,15 @@ class Home extends Component
             ->skip(2)
             ->take(9)
             ->get();
+        $this->courses = Course::with(['lessons' => function($query) {
+            $query->select('slug', 'title');
+        }])
+            ->select('name', 'slug')
+            ->get();
+
+
+
+        dd($this->courses);
     }
 
     public function render()

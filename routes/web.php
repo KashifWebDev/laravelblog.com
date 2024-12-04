@@ -1,6 +1,5 @@
 <?php
 
-use App\Jobs\ScrapArticle;
 use App\Livewire\App\Courses;
 use App\Livewire\App\Home;
 use App\Livewire\App\QuickTips;
@@ -15,6 +14,7 @@ Route::get('/tips', QuickTips::class)->name('article.tips');
 
 Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
     Route::get('/', Courses\Index::class)->name('index');
+    Route::get('/{slug}', Courses\ViewCourse::class)->name('show');
 });
 
 Route::view('dashboard', 'dashboard')

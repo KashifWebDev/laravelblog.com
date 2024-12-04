@@ -47,7 +47,7 @@
         <div class="main-wrapper mrb-100">
             <div class="container">
                 <div class="row justify-content-between">
-                    <div class="col-lg-12 main-wrapper-content">
+                    <div class="col-lg-8 main-wrapper-content">
                         <main class="site-main">
                             <div class="row masonry-posts">
 
@@ -94,10 +94,99 @@
                             <a href="{{ route('article.tutorials') }}" wire:navigate.hover class="load-more-btn">Explore More</a>
                         </div>
                     </div>
+                    <div class="col-lg-4" style="transform: none;">
+                        <div class="sidebar-items style-two">
+                            <aside class="widget widget-post-list">
+                                <h4 class="widget-title">Recent Post</h4>
+                                <div class="widget-content">
+                                    <h3 class="mb-3" style="font-size: x-large">This is a course Title here</h3>
+                                    <article class="post">
+                                        <div class="thumb-wrap">
+                                            <a href="single-post.html">
+                                                <img src="assets/images/widget/post/wp_1.jpg" alt="post">
+                                            </a>
+                                        </div>
+                                        <!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="single-post.html">Best Wordpress Theme of 2021</a>
+                                            </h3>
+                                            <!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    August 23, 2015
+                                                </div>
+                                            </div>
+                                            <!--./ entry-meta-content -->
+                                        </div>
+                                    </article>
+                                    <article class="post">
+                                        <div class="thumb-wrap">
+                                            <a href="single-post.html">
+                                                <img src="assets/images/widget/post/wp_2.jpg" alt="post">
+                                            </a>
+                                        </div>
+                                        <!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="single-post.html">Dating While Studying Minimize Heartbreak</a>
+                                            </h3>
+                                            <!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    August 23, 2015
+                                                </div>
+                                            </div>
+                                            <!--./ entry-meta-content -->
+                                        </div>
+                                    </article>
+                                    <article class="post">
+                                        <div class="thumb-wrap">
+                                            <a href="single-post.html">
+                                                <img src="assets/images/widget/post/wp_3.jpg" alt="post">
+                                            </a>
+                                        </div>
+                                        <!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="single-post.html">Nature Photography Best Place Focus</a>
+                                            </h3>
+                                            <!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    August 23, 2015
+                                                </div>
+                                            </div>
+                                            <!--./ entry-meta-content -->
+                                        </div>
+                                    </article>
+                                    <article class="post">
+                                        <div class="thumb-wrap">
+                                            <a href="single-post.html">
+                                                <img src="assets/images/widget/post/wp_4.jpg" alt="post">
+                                            </a>
+                                        </div>
+                                        <!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="single-post.html">Best Wordpress Theme of 2021</a>
+                                            </h3>
+                                            <!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    August 23, 2015
+                                                </div>
+                                            </div>
+                                            <!--./ entry-meta-content -->
+                                        </div>
+                                    </article>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--~./ end main wrapper ~-->
 
     @endsection
 </div>

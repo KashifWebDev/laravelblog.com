@@ -12292,7 +12292,7 @@ body.sidemenu-active #pp-nav.right {
 --------------------------------------------------------------*/
 .widget-post-list .post,
 .widget-comments-list .post {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   background-color: transparent;
   box-shadow: 0 0 0px 0 transparent;
   display: -webkit-box;

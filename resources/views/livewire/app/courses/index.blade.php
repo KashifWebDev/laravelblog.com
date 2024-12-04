@@ -12,8 +12,8 @@
                                         <article class="post post-grid-style post-grid-style-two">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a  wire:navigate.hover href="{{ route('article.read', ['slug' => $article->slug]) }}">
-                                                        <img src="storage/{{ $article->image }}" alt="post" />
+                                                    <a  wire:navigate.hover href="{{ route('courses.show', ['slug' => $course->slug]) }}">
+                                                        <img src="storage/{{ $course->image }}" alt="post" />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -24,8 +24,8 @@
                                                     <a class="cat" href="#">PHP</a>
                                                 </div>
                                                 <h3 class="entry-title">
-                                                    <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
-                                                        {{ $article->title }}
+                                                    <a href="{{ route('courses.show', ['slug' => $course->slug]) }}" wire:navigate.hover>
+                                                        {{ $course->title }}
                                                     </a>
                                                 </h3>
                                             </div>
@@ -37,7 +37,7 @@
                                                     <div class="author-name">
                                                         <a href="#">Admin</a>
                                                     </div>
-                                                    <div class="entry-date">{{ \Carbon\Carbon::parse($article->created_at)->format('l, F j, Y') }}</div>
+                                                    <div class="entry-date">{{ \Carbon\Carbon::parse($course->created_at)->format('l, F j, Y') }}</div>
                                                 </div>
                                             </div>
                                         </article>
