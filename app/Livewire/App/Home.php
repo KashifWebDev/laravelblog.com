@@ -29,7 +29,7 @@ class Home extends Component
 
 
 
-        dd($this->courses);
+//        dd($this->courses);
     }
 
     public function render()
