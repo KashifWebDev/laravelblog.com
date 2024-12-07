@@ -97,90 +97,34 @@
                     <div class="col-lg-4" style="transform: none;">
                         <div class="sidebar-items style-two">
                             <aside class="widget widget-post-list">
-                                <h4 class="widget-title">Recent Post</h4>
-                                <div class="widget-content">
-                                    <h3 class="mb-3" style="font-size: x-large">This is a course Title here</h3>
-                                    <article class="post">
-                                        <div class="thumb-wrap">
-                                            <a href="single-post.html">
-                                                <img src="assets/images/widget/post/wp_1.jpg" alt="post">
+                                <h4 class="widget-title">Latest Courses</h4>
+                                @foreach($courses as $course)
+                                    <div class="widget-content">
+                                        <h3 class="mb-3" style="font-size: x-large">
+                                            <a wire.navigate.hover href="{{ route('courses.show', ['slug' => $course->slug]) }}">
+                                                {{ $course->name }}.
+                                                <span class="text-muted" style="font-size: medium;">{{ $course->published_at }}</span>
                                             </a>
-                                        </div>
-                                        <!--./ thumb-wrap -->
-                                        <div class="content-entry-wrap">
-                                            <h3 class="entry-title">
-                                                <a href="single-post.html">Best Wordpress Theme of 2021</a>
-                                            </h3>
-                                            <!--./ entry-title -->
-                                            <div class="entry-meta-content">
-                                                <div class="entry-date">
-                                                    August 23, 2015
+                                        </h3>
+                                        @foreach($course->lessons as $lesson)
+                                            <article class="post">
+                                                <div class="thumb-wrap">
+                                                    <a wire.navigate.hover href="{{ route('courses.show.lesson', ['slug' => $course->slug, 'lesson' => $lesson->slug]) }}">
+                                                        <img src="{{ asset('storage/'.$course->image) }}" alt="post">
+                                                    </a>
                                                 </div>
-                                            </div>
-                                            <!--./ entry-meta-content -->
-                                        </div>
-                                    </article>
-                                    <article class="post">
-                                        <div class="thumb-wrap">
-                                            <a href="single-post.html">
-                                                <img src="assets/images/widget/post/wp_2.jpg" alt="post">
-                                            </a>
-                                        </div>
-                                        <!--./ thumb-wrap -->
-                                        <div class="content-entry-wrap">
-                                            <h3 class="entry-title">
-                                                <a href="single-post.html">Dating While Studying Minimize Heartbreak</a>
-                                            </h3>
-                                            <!--./ entry-title -->
-                                            <div class="entry-meta-content">
-                                                <div class="entry-date">
-                                                    August 23, 2015
+                                                <!--./ thumb-wrap -->
+                                                <div class="content-entry-wrap">
+                                                    <h3 class="entry-title">
+                                                        <a wire.navigate.hover href="{{ route('courses.show.lesson', ['slug' => $course->slug, 'lesson' => $lesson->slug]) }}">
+                                                            {{ $lesson->title }}
+                                                        </a>
+                                                    </h3>
                                                 </div>
-                                            </div>
-                                            <!--./ entry-meta-content -->
-                                        </div>
-                                    </article>
-                                    <article class="post">
-                                        <div class="thumb-wrap">
-                                            <a href="single-post.html">
-                                                <img src="assets/images/widget/post/wp_3.jpg" alt="post">
-                                            </a>
-                                        </div>
-                                        <!--./ thumb-wrap -->
-                                        <div class="content-entry-wrap">
-                                            <h3 class="entry-title">
-                                                <a href="single-post.html">Nature Photography Best Place Focus</a>
-                                            </h3>
-                                            <!--./ entry-title -->
-                                            <div class="entry-meta-content">
-                                                <div class="entry-date">
-                                                    August 23, 2015
-                                                </div>
-                                            </div>
-                                            <!--./ entry-meta-content -->
-                                        </div>
-                                    </article>
-                                    <article class="post">
-                                        <div class="thumb-wrap">
-                                            <a href="single-post.html">
-                                                <img src="assets/images/widget/post/wp_4.jpg" alt="post">
-                                            </a>
-                                        </div>
-                                        <!--./ thumb-wrap -->
-                                        <div class="content-entry-wrap">
-                                            <h3 class="entry-title">
-                                                <a href="single-post.html">Best Wordpress Theme of 2021</a>
-                                            </h3>
-                                            <!--./ entry-title -->
-                                            <div class="entry-meta-content">
-                                                <div class="entry-date">
-                                                    August 23, 2015
-                                                </div>
-                                            </div>
-                                            <!--./ entry-meta-content -->
-                                        </div>
-                                    </article>
-                                </div>
+                                            </article>
+                                        @endforeach
+                                    </div>
+                                @endforeach
                             </aside>
                         </div>
                     </div>

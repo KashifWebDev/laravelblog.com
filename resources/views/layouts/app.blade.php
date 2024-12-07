@@ -63,7 +63,7 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <meta name="twitter:description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta name="twitter:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
-
+    <link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
 
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/android-icon-72x72.png" />

@@ -21,15 +21,20 @@ class Home extends Component
             ->skip(2)
             ->take(9)
             ->get();
-        $this->courses = Course::with(['lessons' => function($query) {
-            $query->select('slug', 'title');
-        }])
-            ->select('name', 'slug')
-            ->get();
 
+        $this->courses =  Course::query()
+            ->select('id', 'slug', 'name', 'words', 'published_at', 'image')
+            ->orderBy('created_at', 'asc') // Sort courses by a relevant column
+            ->take(15) // Limit to top 15 courses
+            ->with(['lessons' => function ($query) {
+                $query->select('course_id', 'title', 'slug')
+                    ->orderBy('created_at', 'asc')
+                    ->whereType('link')
+                    ->take(4);
+            }])
+            ->get()
+            ->random(3);
 
-
-//        dd($this->courses);
     }
 
     public function render()
