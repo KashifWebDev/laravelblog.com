@@ -13,7 +13,7 @@
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
                                                     <a  wire:navigate.hover href="{{ route('courses.show', ['slug' => $course->slug]) }}">
-                                                        <img src="storage/{{ $course->image }}" alt="post" />
+                                                        <img src="storage/{{ $course->image }}" alt="Course Thumbnail" />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -25,7 +25,7 @@
                                                 </div>
                                                 <h3 class="entry-title">
                                                     <a href="{{ route('courses.show', ['slug' => $course->slug]) }}" wire:navigate.hover>
-                                                        {{ $course->title }}
+                                                        {{ $course->name }}
                                                     </a>
                                                 </h3>
                                             </div>

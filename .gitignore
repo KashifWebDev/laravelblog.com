@@ -25,3 +25,5 @@ yarn-error.log
 .htaccess
 composer.lock
 package-lock.json
+storage
+/storage/*

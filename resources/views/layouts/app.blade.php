@@ -62,6 +62,7 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <meta name="twitter:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
     <meta name="twitter:description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta name="twitter:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
+    <meta name="google-adsense-account" content="ca-pub-6248375401510068">
 
     <link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
 
