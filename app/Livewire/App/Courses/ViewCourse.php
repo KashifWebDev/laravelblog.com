@@ -46,7 +46,7 @@ class ViewCourse extends Component
         $metaDescription = substr($cleanedDescription, 0, 160);
 
         view()->share('metaDescription', $metaDescription);
-        view()->share('metaKeywords', str_replace(" ", ',', $course['course']->name));
+        view()->share('metaKeywords', str_replace(" ", ',', $this->course['course']->name));
         view()->share('ogType', 'article');
     }
 }
