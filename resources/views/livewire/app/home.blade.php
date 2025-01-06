@@ -116,7 +116,7 @@
                                                 <!--./ thumb-wrap -->
                                                 <div class="content-entry-wrap">
                                                     <h3 class="entry-title">
-                                                        <a wire.navigate.hover href="{{ route('courses.show.lesson', ['slug' => $course->slug, 'lesson' => $lesson->slug]) }}">
+                                                        <a wire.navigate.hover href="{{ route('courses.show.lesson', ['course' => $course->slug, 'lesson' => $lesson->slug]) }}">
                                                             {{ $lesson->title }}
                                                         </a>
                                                     </h3>
