@@ -109,7 +109,7 @@
                                         @foreach($course->lessons as $lesson)
                                             <article class="post">
                                                 <div class="thumb-wrap">
-                                                    <a wire.navigate.hover href="{{ route('courses.show.lesson', ['slug' => $course->slug, 'lesson' => $lesson->slug]) }}">
+                                                    <a wire.navigate.hover href="{{ route('courses.show.lesson', ['course' => $course->slug, 'lesson' => $lesson->slug]) }}">
                                                         <img src="{{ asset('storage/'.$course->image) }}" alt="post">
                                                     </a>
                                                 </div>
