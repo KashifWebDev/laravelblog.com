@@ -55,8 +55,8 @@ class ViewLesson extends Component
             'nextLesson' => $this->nextLesson
         ];
         $this->course = $this->viewData['course'];
-//        dd($previousLesson);
-//        ['course']->slug
+
+        $this->setSeoTags();
     }
     public function render()
     {
@@ -102,5 +102,21 @@ class ViewLesson extends Component
         }
 
         return null;
+    }
+
+    public function setSeoTags()
+    {
+        // Set dynamic SEO tags
+        view()->share('metaTitle', $this->lesson->title);
+        $originalDescription = mb_strimwidth($this->course['lesson_content'], 0, 300, '...');
+        // Remove HTML tags
+        $cleanedDescription = strip_tags($originalDescription);
+        $cleanedDescription = html_entity_decode($cleanedDescription, ENT_QUOTES, 'UTF-8');
+        $cleanedDescription = trim($cleanedDescription);
+        $metaDescription = substr($cleanedDescription, 0, 160);
+
+        view()->share('metaDescription', $metaDescription);
+        view()->share('metaKeywords', str_replace(" ", ',', $this->lesson->title));
+        view()->share('ogType', 'article');
     }
 }

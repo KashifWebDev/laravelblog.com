@@ -39,8 +39,10 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <meta name="description" content="{{ $metaDescription ?? $desc }}">
     <meta name="keywords" content="{{ $metaKeywords ?? 'Laravel Blogs, Laravel, Blogs' }}">
     <meta property="og:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}">
-    <meta property="og:description" content="{{ $metaDescription ?? 'Laravel Blogs' }}">
+    <meta property="og:description" content="{{ $metaDescription ?? $desc }}, LaravelBlogs, Laravel Blogs, LaravelDaily, Laravel Daily" />
     <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="{{ isset($ogType) ? 'article' : 'website' }}" />
+    <meta property="og:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
 
     <meta name="description" content="{{ $metaDescription ?? $desc }}" />
@@ -50,17 +52,11 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <meta itemprop="description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta itemprop="image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://www.laravelblogs.com/post/mysql-functions-examples-laravel-raw-queries" />
-    <meta property="og:type" content="{{ isset($ogType) ? 'article' : 'website' }}" />
-    <meta property="og:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
-    <meta property="og:description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
-    <meta property="og:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
-    <meta name="twitter:description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
+    <meta name="twitter:description" content="{{ $metaDescription ?? $desc }}, LaravelBlogs, Laravel Blogs, LaravelDaily, Laravel Daily" />
     <meta name="twitter:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
     <meta name="google-adsense-account" content="ca-pub-6248375401510068">
 
