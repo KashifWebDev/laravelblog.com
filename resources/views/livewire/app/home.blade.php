@@ -101,7 +101,7 @@
                                 @foreach($courses as $course)
                                     <div class="widget-content">
                                         <h3 class="mb-3" style="font-size: x-large">
-                                            <a wire.navigate.hover href="{{ route('courses.show', ['slug' => $course->slug]) }}">
+                                            <a wire.navigate.hover href="{{ route('courses.show', ['course' => $course->slug]) }}">
                                                 {{ $course->name }}.
                                                 <span class="text-muted" style="font-size: medium;">{{ $course->published_at }}</span>
                                             </a>
