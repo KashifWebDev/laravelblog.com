@@ -83,6 +83,22 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+
+    <style>
+        pre {
+            color: #d1d5db;
+            background-color: #26252b;
+            overflow-x: auto;
+            font-weight: 400;
+            font-size: .875em;
+            line-height: 1.7142857;
+            margin-top: 1.7142857em;
+            margin-bottom: 1.7142857em;
+            border-radius: .375rem;
+            padding: .8571429em 1.1428571em;
+        }
+    </style>
+
 </head>
     <body class="bg-white-smoke">
 

@@ -14,8 +14,8 @@ Route::get('/tips', QuickTips::class)->name('article.tips');
 
 Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
     Route::get('/', Courses\Index::class)->name('index');
-    Route::get('/{slug}', Courses\ViewCourse::class)->name('show');
-    Route::get('/{slug}/{lesson}', Courses\ViewCourse::class)->name('show.lesson');
+    Route::get('/{course}', Courses\ViewCourse::class)->name('show');
+    Route::get('/{course}/{lesson}', Courses\ViewLesson::class)->name('show.lesson');
 });
 
 Route::view('dashboard', 'dashboard')

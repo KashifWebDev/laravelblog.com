@@ -12,7 +12,7 @@
                                         <article class="post post-grid-style post-grid-style-two">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a  wire:navigate.hover href="{{ route('courses.show', ['slug' => $course->slug]) }}">
+                                                    <a  wire:navigate.hover href="{{ route('courses.show', ['course' => $course->slug]) }}">
                                                         <img src="storage/{{ $course->image }}" alt="Course Thumbnail" />
                                                     </a>
                                                 </figure>
@@ -24,7 +24,7 @@
                                                     <a class="cat" href="#">PHP</a>
                                                 </div>
                                                 <h3 class="entry-title">
-                                                    <a href="{{ route('courses.show', ['slug' => $course->slug]) }}" wire:navigate.hover>
+                                                    <a href="{{ route('courses.show', ['course' => $course->slug]) }}" wire:navigate.hover>
                                                         {{ $course->name }}
                                                     </a>
                                                 </h3>
