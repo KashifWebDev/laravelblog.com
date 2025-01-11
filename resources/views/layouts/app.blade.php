@@ -1,41 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php $desc = 'Discover the ultimate resource for Laravel and PHP development. Access in-depth tutorials, expert coding tips, and the latest tools and trends to elevate your skills. Stay ahead with insights into cutting-edge techniques and best practices for building robust, scalable web applications."
+<head>
+    <?php $desc = 'Discover the ultimate resource for Laravel and PHP development. Access in-depth tutorials, expert coding tips, and the latest tools and trends to elevate your skills. Stay ahead with insights into cutting-edge techniques and best practices for building robust, scalable web applications."
 
 This version includes strategic keywords like "ultimate resource," "in-depth tutorials," "cutting-edge techniques," and "scalable web applications" to improve search rankings while keeping the content engaging and informative'; ?>
-<head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W3DK2P4B');</script>
-
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R7G5BFS1C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-3R7G5BFS1C');
-    </script>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "p6rrxtlggs");
-    </script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <title>{{ isset($metaTitle) ? $metaTitle.' | Laravel Blogs' : 'Laravel Blogs' }}</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#0E0E0E">
+    <meta name="template-color" content="#0E0E0E">
     <meta name="description" content="{{ $metaDescription ?? $desc }}">
     <meta name="keywords" content="{{ $metaKeywords ?? 'Laravel Blogs, Laravel, Blogs' }}">
     <meta property="og:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}">
@@ -43,318 +16,238 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="{{ isset($ogType) ? 'article' : 'website' }}" />
     <meta property="og:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
-
-
     <meta name="description" content="{{ $metaDescription ?? $desc }}" />
-
-    <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
     <meta itemprop="description" content="{{ $metaDescription ?? $desc }}, LaravelDaily, Laravel Dail" />
     <meta itemprop="image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
-
-
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $metaTitle ?? 'Laravel Blogs' }}" />
     <meta name="twitter:description" content="{{ $metaDescription ?? $desc }}, LaravelBlogs, Laravel Blogs, LaravelDaily, Laravel Daily" />
     <meta name="twitter:image" content="{{ isset($metaPic) ? $metaPic : asset('logo.png') }}" />
     <meta name="google-adsense-account" content="ca-pub-6248375401510068">
-
     <link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
 
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/android-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-144x144.png" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/simple-scrollbar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/color/color-four.css') }}" />
-
-    <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/template/favicon.svg') }}">
+    <title>{{ isset($metaTitle) ? $metaTitle.' | Laravel Blogs' : 'Laravel Blogs' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-
-    <style>
-        pre {
-            color: #d1d5db;
-            background-color: #26252b;
-            overflow-x: auto;
-            font-weight: 400;
-            font-size: .875em;
-            line-height: 1.7142857;
-            margin-top: 1.7142857em;
-            margin-bottom: 1.7142857em;
-            border-radius: .375rem;
-            padding: .8571429em 1.1428571em;
-        }
-    </style>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
-    <body class="bg-white-smoke">
+<body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3DK2P4B"
-                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3DK2P4B"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-
-        <div class="site-content">
-            <header class="site-header default-header-style style-one intro-element">
-                <div class="header-download-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="download-area-content">
-                                    <div class="download-text">"Stay tuned! We're soon uploading our premium courses for free!</div>
-                                </div>
+<header class="header sticky-bar bg-gray-900">
+    <div class="container">
+        <div class="main-header">
+            <div class="header-logo"><a class="d-flex" wire:navigate.hover href="{{ route('home') }}"><img class="logo-night" alt="GenZ" src="{{ asset('logo.png') }}"><img class="d-none logo-day" alt="GenZ" src="assets/imgs/template/logo-day.svg"></a></div>
+            <div class="header-nav">
+                <nav class="nav-main-menu d-none d-xl-block">
+                    <ul class="main-menu">
+                        <li><a class="color-gray-500" wire:navigate.hover href="{{ route('home') }}">Home</a></li>
+                        <li><a class="color-gray-500" wire:navigate.hover href="{{ route('article.tutorials') }}">Free Premium Articles</a></li>
+                        <li>
+                            <a class="color-gray-500" wire:navigate.hover href="{{ route('courses.index') }}">
+                                Free Premium Courses
+                                <span class="badge rounded-pill bg-primary ms-1">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
+            </div>
+            <div class="header-right text-end"><a class="btn btn-search" href="#"></a>
+                <div class="form-search p-20">
+                    <form action="#">
+                        <input class="form-control" type="text" placeholder="Search">
+                        <input class="btn-search-2" type="submit" value="">
+                    </form>
+                    <div class="popular-keywords text-start mt-20">
+                        <p class="mb-10 color-white">Popular tags:</p><a class="color-gray-600 mr-10 font-xs" href="#"># Travel,</a><a class="color-gray-600 mr-10 font-xs" href="#"># Tech,</a><a class="color-gray-600 mr-10 font-xs" href="#"># Movie</a><a class="color-gray-600 mr-10 font-xs" href="#"># Lifestyle</a><a class="color-gray-600 mr-10 font-xs" href="#"># Sport</a>
+                    </div>
+                </div>
+                <div class="switch-button">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" role="switch" checked="">
+                    </div>
+                </div><a class="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow" href="page-login.html">Subscribe</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar bg-gray-900">
+    <div class="mobile-header-wrapper-inner">
+        <div class="mobile-header-content-area">
+            <div class="mobile-logo border-gray-800"><a class="d-flex" href="index.html"><img class="logo-night" alt="GenZ" src="assets/imgs/template/logo.svg"><img class="d-none logo-day" alt="GenZ" src="assets/imgs/template/logo-day.svg"></a></div>
+            <div class="perfect-scroll">
+                <div class="mobile-menu-wrap mobile-header-border">
+                    <nav class="mt-15">
+                        <ul class="mobile-menu font-heading">
+                            <li class="has-children"><a href="index.html">Home</a>
+                                <ul class="sub-menu">
+                                    <li><a href="index.html">Homepage - 1</a></li>
+                                    <li><a href="index-2.html">Homepage - 2</a></li>
+                                    <li><a href="index-3.html">Homepage - 3</a></li>
+                                    <li><a href="index-4.html">Homepage - 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children"><a href="#">Category</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-archive.html">Blog Category 1</a></li>
+                                    <li><a href="blog-archive-2.html">Blog Category 2</a></li>
+                                    <li><a href="blog-archive-3.html">Blog Category 3</a></li>
+                                    <li><a href="blog-archive-4.html">Blog Category 4</a></li>
+                                    <li><a href="blog-archive-5.html">Blog Category 5</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children"><a href="#">Single Post</a>
+                                <ul class="sub-menu">
+                                    <li><a href="single-sidebar.html">Blog Single 1</a></li>
+                                    <li><a href="single-no-sidebar.html">Blog Single 2</a></li>
+                                    <li><a href="single-center.html">Blog Single 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children"><a class="color-gray-500" href="page-portfolio.html">Portfolio</a>
+                                <ul class="sub-menu">
+                                    <li><a class="color-gray-500" href="page-portfolio.html">My Portfolio</a></li>
+                                    <li><a class="color-gray-500" href="page-portfolio-2.html">My Portfolio 2</a></li>
+                                    <li><a class="color-gray-500" href="portfolio-details.html">Portfolio Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children"><a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="page-about.html">About</a></li>
+                                    <li><a href="page-author.html">Author posts</a></li>
+                                    <li><a href="page-contact.html">Contact</a></li>
+                                    <li><a href="page-search.html">Search results</a></li>
+                                    <li><a href="page-login.html">Login</a></li>
+                                    <li><a href="page-signup.html">Signup</a></li>
+                                    <li><a href="page-404.html">Page 404</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page-contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="mobile-account border-gray-800">
+                    <div class="mobile-header-top bg-gray-900">
+                        <div class="user-account"><a href="page-login.html"><img src="assets/imgs/template/ava.jpg" alt="GenZ"></a>
+                            <div class="content">
+                                <h6 class="user-name color-white">Hello<span class="color-white"> Steven !</span></h6>
+                                <p class="font-xs text-muted">You have 3 new messages</p>
                             </div>
                         </div>
                     </div>
+                    <ul class="mobile-menu">
+                        <li><a href="page-login.html">Profile</a></li>
+                        <li><a href="page-login.html">Articles Saved</a></li>
+                        <li><a href="page-login.html">Add new post</a></li>
+                        <li><a href="page-login.html">My Likes</a></li>
+                        <li><a href="page-login.html">Account Setting</a></li>
+                        <li><a href="page-login.html">Sign out</a></li>
+                    </ul>
                 </div>
-                <div class="header-top-area">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-4">
-                                <div class="intro-socail-share">
-                                    <div class="share-alt"><span class="fa fa-share-alt"></span></div>
-                                    <div class="socail-share">
-                                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                        <a href="#"><span class="fab fa-twitter"></span></a>
-                                        <a href="#"><span class="fab fa-instagram"></span></a>
-                                        <a href="#"><span class="fab fa-pinterest-p "></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="site-branding text-center">
-                                    <a href="{{ route('home') }}"  wire:navigate.hover>
-                                        <img src="{{ asset('logo.png') }}" alt="LaravelBlogs Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="header-right-area">
-                                    <div class="search-wrap">
-                                        <div class="search-btn">
-                                            <i class="fas fa-search"></i>
-                                        </div>
-                                        <div class="search-form">
-                                            <form action="#">
-                                                <input type="search" placeholder="Search">
-                                                <button type="submit"><i class="fas fa-search"></i></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="hamburger-menus">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="site-copyright color-gray-400 mt-30">Copyright 2023 &copy; Genz - Personal Blog Template.<br>Designed by<a href="http://alithemes.com" target="_blank">&nbsp; AliThemes</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@yield('content')
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-1 bg-gray-850 border-gray-800">
+            <div class="row">
+                <div class="col-lg-4 mb-30"><a class="wow animate__animated animate__fadeInUp" href="index.html"><img class="logo-night" src="assets/imgs/template/logo.svg" alt="Genz"><img class="d-none logo-day" alt="GenZ" src="assets/imgs/template/logo-day.svg"></a>
+                    <p class="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">When an unknown prnoto sans took a galley and scrambled it to make specimen book not only five When an unknown prnoto sans took a galley and scrambled it to five centurie.</p>
+                    <h6 class="color-white mb-5 wow animate__animated animate__fadeInUp">Address</h6>
+                    <p class="text-sm color-gray-500 wow animate__animated animate__fadeInUp">123 Main Street<br>New York, NY 10001</p>
+                </div>
+                <div class="col-lg-4 mb-30">
+                    <h6 class="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">Categories</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="menu-footer">
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Action</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Business</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Adventure</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Canada</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">America</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Curiosity</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="menu-footer">
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Animal</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Dental</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Biology</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Design</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Breakfast</a></li>
+                                <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Dessert</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="navigation-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="site-navigation">
-                                    <nav class="navigation">
-                                        <div class="menu-wrapper">
-                                            <div class="menu-content">
-                                                <ul class="mainmenu">
-                                                    <li><a wire:navigate.hover href="{{ route('home') }}">Home</a></li>
-                                                    <li><a wire:navigate.hover href="{{ route('courses.index') }}">Premium Courses</a></li>
-                                                    <li><a wire:navigate.hover href="{{ route('article.tutorials') }}">Premium Tutorials</a></li>
-                                                    <li><a wire:navigate.hover href="{{ route('article.tips') }}">Quick Tips</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </nav>
-                                </div>
+                <div class="col-lg-4 mb-30">
+                    <h4 class="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">Newsletter</h4>
+                    <p class="text-base color-gray-500 wow animate__animated animate__fadeInUp">Sign up to be first to receive the latest stories inspiring us, case studies, and industry news.</p>
+                    <div class="form-newsletters mt-15 wow animate__animated animate__fadeInUp">
+                        <form action="#">
+                            <div class="form-group">
+                                <input class="input-name border-gray-500" type="text" placeholder="Your name">
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <input class="input-email border-gray-500" type="email" placeholder="Emaill address">
+                            </div>
+                            <div class="form-group mt-20">
+                                <button class="btn btn-linear hover-up">
+                                    Subscribe
+                                    <i class="fi-rr-arrow-small-right"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
-                <div class="mobile-sidebar-menu sidebar-menu">
-                    <div class="overlaybg"></div>
-                </div>
-            </header>
-            <div id="sticky-header" class="active"></div>
-
-
-
-            @yield('content')
-
-            <div class="subscribe-section style-two bg-white pd-t-100-i">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div class="subscribe-section-content mr-0">
-                                <div class="section-header">
-                                    <h2 class="title">Subscribe</h2>
-                                    <p>Subscribe Now To Get Daily Updates</p>
-                                </div>
-                                <div class="subscribe-form">
-                                    <!-- Subscribe form -->
-                                    <form class="dv-form" id="mc-form">
-                                        <div class="form-group">
-                                            <input id="mc-email" name="EMAIL" placeholder="Email Address" type="email" />
-                                            <button class="btn btn-default" name="Subscribe" id="subscribe-btn" type="submit">
-                                                Subscribe
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+            </div>
+            <div class="footer-bottom border-gray-800">
+                <div class="row">
+                    <div class="col-lg-5 text-center text-lg-start">
+                        <p class="text-base color-white wow animate__animated animate__fadeIn">© Created by<a class="copyright" href="http://alithemes.com" target="_blank"> AliThemes.com</a></p>
+                    </div>
+                    <div class="col-lg-7 text-center text-lg-end">
+                        <div class="box-socials">
+                            <div class="d-inline-block mr-30 wow animate__animated animate__fadeIn" data-wow-delay=".0s"><a class="icon-socials icon-twitter color-gray-500" href="https://twitter.com">Twitter</a></div>
+                            <div class="d-inline-block mr-30 wow animate__animated animate__fadeIn" data-wow-delay=".2s"><a class="icon-socials icon-linked color-gray-500" href="https://www.linkedin.com">LinkedIn</a></div>
+                            <div class="d-inline-block wow animate__animated animate__fadeIn" data-wow-delay=".4s"><a class="icon-socials icon-insta color-gray-500" href="https://www.instagram.com">Instagram</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <footer class="site-footer bg-white pd-t-100">
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                        Start Footer Widget Area
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div class="footer-widget-area">
-                    <div class="container">
-                        <div class="row">
-                            <!--~~~~~ Start Widget Location ~~~~~-->
-                            <div class="col-lg-4 col-md-6">
-                                <aside class="widget bt-location-widget">
-                                    <div class="widget-content">
-                                        <a class="footer-logo" href="index09.html">
-                                            <img src="{{ asset('logo.png') }}" alt="Footer Logo">
-                                        </a>
-                                        <div class="info-box">
-                                            <p>
-                                                Dannmondi 15 number Sheen Darus Salam. 112/B Road 8A,
-                                                Dhanmondi.
-                                            </p>
-                                        </div>
-                                        <div class="info-box">
-                                            <p>
-                                                <a href="mailto:admin@laravelblogs.com">admin@laravelblogs.com</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </aside>
-                            </div>
-                            <!--~./ end location widget ~-->
-
-                            <!--~~~~~ Start Widget Links ~~~~~-->
-{{--                            <div class="col-lg-2 col-md-6">--}}
-{{--                                <aside class="widget widget_links">--}}
-{{--                                    <h2 class="widget-title">Quick Links</h2>--}}
-{{--                                    <div class="widget-content">--}}
-{{--                                        <ul>--}}
-{{--                                            <li><a href="#">About Us</a></li>--}}
-{{--                                            <li><a href="#">Contact Us</a></li>--}}
-{{--                                            <li><a href="#">Careers</a></li>--}}
-{{--                                            <li><a href="#">Services</a></li>--}}
-{{--                                            <li><a href="#">Stories</a></li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </aside>--}}
-{{--                            </div>--}}
-{{--                            <!--~./ end links widget ~-->--}}
-{{--                            <!--~~~~~ Start Widget Links ~~~~~-->--}}
-{{--                            <div class="col-lg-2 col-md-6">--}}
-{{--                                <aside class="widget widget_links">--}}
-{{--                                    <h2 class="widget-title">Categories</h2>--}}
-{{--                                    <div class="widget-content">--}}
-{{--                                        <ul>--}}
-{{--                                            <li><a href="#">Lifestyle</a></li>--}}
-{{--                                            <li><a href="#">Travel</a></li>--}}
-{{--                                            <li><a href="#">Food & Drinks</a></li>--}}
-{{--                                            <li><a href="#">Inspiration</a></li>--}}
-{{--                                            <li><a href="#">Decoration</a></li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </aside>--}}
-{{--                            </div>--}}
-{{--                            <!--~./ end links widget ~-->--}}
-
-{{--                            <!--~~~~~ Start Instagram Widget~~~~~-->--}}
-{{--                            <div class="col-lg-4 col-md-6">--}}
-{{--                                <aside class="widget bt-instafeed-widget style-four">--}}
-{{--                                    <h4 class="widget-title">Instagram</h4>--}}
-{{--                                    <div class="widget-content">--}}
-{{--                                        <ul id="instafeed">--}}
-{{--                                            <li class="feed-item">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <img src="assets/images/widget/instagram/3/1.jpg" alt="#">--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="feed-item">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <img src="assets/images/widget/instagram/3/2.jpg" alt="#">--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="feed-item">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <img src="assets/images/widget/instagram/3/3.jpg" alt="#">--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="#">visit us on instagram</a>--}}
-{{--                                    </div>--}}
-{{--                                </aside>--}}
-{{--                            </div>--}}
-                            <!--~./ end instagram widget ~-->
-                        </div>
-                    </div>
-                </div>
-                <!--~./ end footer widgets area ~-->
-
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                            Start Footer Bottom Area
-                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div class="footer-bottom-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="footer-bottom-content">
-                                    <div class="copyright-text text-center">
-                                        <p>
-                                            Copyright - 2024
-                                            <a href="{{ route('home') }}">Laravel Blogs</a>
-                                        </p>
-                                    </div>
-                                    <!--~./ end copyright text ~-->
-                                </div>
-                            </div>
-                            <!--~./ col-12 ~-->
-                        </div>
-                    </div>
-                </div>
-                <!--~./ end footer bottom area ~-->
-            </footer>
-
         </div>
+    </div>
+</footer>
+<div class="progressCounter progressScroll hover-up hover-neon-2">
+    <div class="progressScroll-border">
+        <div class="progressScroll-circle"><span class="progressScroll-text"><i class="fi-rr-arrow-small-up"></i></span></div>
+    </div>
+</div>
 
-        <script src="{{ asset('assets/js/jquery.js') }}"></script>
-        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins.js') }}"></script>
-        <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
-        <script src="{{ asset('assets/js/simple-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-        <script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
-        <script src="{{ asset('assets/js/theia-sticky-sidebar.min.js') }}"></script>
-        <script src="{{ asset('assets/js/ResizeSensor.min.js') }}"></script>
-        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('assets/js/scrolla.jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/js/main.js') }}"></script>
-    @livewireScripts
-    </body>
+
+<script src="{{ asset('assets/js/vendors/modernizr-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/jquery-migrate-3.3.0.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/waypoints.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/wow.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/text-type.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendors/jquery.progressScroll.min.js') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=2.0') }}"></script>
+@livewireScripts
+</body>
 </html>
