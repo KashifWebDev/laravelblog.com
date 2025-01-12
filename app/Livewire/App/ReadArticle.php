@@ -11,6 +11,7 @@ class ReadArticle extends Component
     public $slug;
     public $article;
     public $randomArticles;
+    public $popular_articles;
 
     public function mount($slug)
     {
@@ -19,6 +20,9 @@ class ReadArticle extends Component
         $this->randomArticles = Article::inRandomOrder()->limit(3)->get();
         $this->article->increment('views');
         $this->setSeoTags();
+
+        $this->randomArticles = Article::inRandomOrder()->limit(6)->get();
+        $this->article->content = str_replace('src="/uploads/', 'src="https://laraveldaily.com/uploads/', $this->article->content);
     }
 
     public function setSeoTags()

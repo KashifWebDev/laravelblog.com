@@ -24,7 +24,7 @@
                                                     <a class="cat" href="#">PHP</a>
                                                 </div>
                                                 <h3 class="entry-title">
-                                                    <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover>
+                                                    <a href="{{ route('article.read', ['slug' => $article->slug]) }}" wire:navigate.hover class="text-white">
                                                         {{ $article->title }}
                                                     </a>
                                                 </h3>
