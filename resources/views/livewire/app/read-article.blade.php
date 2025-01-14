@@ -21,6 +21,9 @@
                 background-color: #292D3E;
                 --theme-selection-background: #7580B850;
             }
+            p img{
+                margin: 10px 0px;
+            }
         </style>
 
         <main class="main">
@@ -90,5 +93,8 @@
                 </div>
             </div>
         </main>
+        <script>
+            $('html,body').scrollTop(0);
+        </script>
     @endsection
 </div>

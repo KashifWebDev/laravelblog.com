@@ -16,60 +16,14 @@
                                 </div>
                                 <div class="text-center mt-50">
                                     <ul class="list-tags-col-5 mb-50 text-center">
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag1.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Travel</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag2.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html"> Culture</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag3.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Lifestyle</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag4.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Fashion</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag5.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Food</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.0s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag7.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Animal</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag8.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Minimal</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag9.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Interior</a></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                                                <div class="card-image"><a href="blog-archive.html"><img src="assets/imgs/page/homepage1/tag10.png" alt="Genz"></a></div>
-                                                <div class="card-info"><a class="color-gray-500" href="blog-archive.html">Plant</a></div>
-                                            </div>
-                                        </li>
+                                        @foreach($tags as $tag)
+                                            <li>
+                                                <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0s">
+                                                    <div class="card-image"><a href="{{ route('search', ['text' => $tag['name']]) }}" wire:navigate.hover><img src="{{ $tag['pic'] }}" alt="{{ $tag['name'] }}"></a></div>
+                                                    <div class="card-info"><a class="color-gray-500" href="{{ route('search', ['text' => $tag['name']]) }}" wire:navigate.hover>{{ $tag['name'] }}</a></div>
+                                                </div>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

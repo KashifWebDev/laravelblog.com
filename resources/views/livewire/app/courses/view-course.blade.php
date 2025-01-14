@@ -42,7 +42,7 @@
                         <div class="card-body">
                             <div class="stats-icon">🏷️</div>
                             <h5 class="card-title">Tag</h5>
-                            <span class="badge badge-primary">{{ $course['course']->tags ?? 'General' }}</span>
+                            <p class="card-text h2">{{ $course['course']->tags ?? 'General' }}</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="col-md-4">
                     <div class="card shadow">
                         <div class="card-body">
-                            <h2 class="card-title mb-4">Course Content</h2>
+                            <h2 class="card-title mb-1 fs-2">Course Content</h2>
 
                             <div class="course-content-wrapper">
                                 @if($course['lessons']->count() > 0)

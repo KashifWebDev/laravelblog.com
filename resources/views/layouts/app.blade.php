@@ -60,22 +60,6 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
                 </nav>
                 <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
             </div>
-            <div class="header-right text-end"><a class="btn btn-search" href="#"></a>
-                <div class="form-search p-20">
-                    <form action="#">
-                        <input class="form-control" type="text" placeholder="Search">
-                        <input class="btn-search-2" type="submit" value="">
-                    </form>
-                    <div class="popular-keywords text-start mt-20">
-                        <p class="mb-10 color-white">Popular tags:</p><a class="color-gray-600 mr-10 font-xs" href="#"># Travel,</a><a class="color-gray-600 mr-10 font-xs" href="#"># Tech,</a><a class="color-gray-600 mr-10 font-xs" href="#"># Movie</a><a class="color-gray-600 mr-10 font-xs" href="#"># Lifestyle</a><a class="color-gray-600 mr-10 font-xs" href="#"># Sport</a>
-                    </div>
-                </div>
-                <div class="switch-button">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" role="switch" checked="">
-                    </div>
-                </div><a class="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow" href="page-login.html">Subscribe</a>
-            </div>
         </div>
     </div>
 </header>

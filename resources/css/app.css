@@ -196,6 +196,18 @@ article ul li{
 article p, article ul, article ul li{
     margin-top: 1.25em;
 }
+.card{
+    background-color: #131c31 !important;
+}
+.card-title, article h2, .lesson-section-title, h1.display-4{
+    color: #94A9C9 !important;
+}
+.lesson-card{
+    background-color: #0f172a !important;
+}
+.lesson-card a span{
+    color: #94A9C9 !important;
+}
 
 
 
