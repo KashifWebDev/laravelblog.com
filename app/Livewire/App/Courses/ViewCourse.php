@@ -11,14 +11,13 @@ class ViewCourse extends Component
     public $course;
     public function mount(Course $course)
     {
-        $courses = $course->withCount('lessons')->first();
+//        $courses = $course->attach('lessons');
 
-        if ($courses) {
             $this->course = [
-                'course' => $courses,
+                'course' => $course,
                 'content' => $course->content,
-                'lessons_count' => $courses->lessons_count,
-                'lessons' => $courses->lessons->map(function ($lesson) {
+                'lessons_count' => $course->lessons()->count(),
+                'lessons' => $course->lessons->map(function ($lesson) {
                     return[
                         'title' => $lesson->title,
                         'type' => $lesson->type,
@@ -26,7 +25,6 @@ class ViewCourse extends Component
                     ];
                 })
             ];
-        }
         $this->setSeoTags();
     }
     public function render()

@@ -23,7 +23,7 @@ class ViewLesson extends Component
             ->firstOrFail();
 
         // Get course with lessons
-        $courseWithLessons = $course->withCount('lessons')->first();
+        $courseWithLessons = $course;
 
         if (!$courseWithLessons) {
             abort(404);
@@ -47,7 +47,7 @@ class ViewLesson extends Component
             'course' => [
                 'course' => $courseWithLessons,
                 'lesson_content' => $currentLesson->content,
-                'lessons_count' => $courseWithLessons->lessons_count,
+                'lessons_count' => $courseWithLessons->lessons()->count(),
                 'lessons' => $lessons
             ],
             'lesson' => $currentLesson,

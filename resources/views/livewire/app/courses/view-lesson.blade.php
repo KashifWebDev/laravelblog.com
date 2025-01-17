@@ -31,7 +31,7 @@
                 <div class="course-breadcrumb" style="margin-top: 75px;">
                     <div class="container">
                         <div class="d-flex align-items-center">
-                            <a href="{{ route('courses.show', $course['course']) }}" class="text-muted mr-3">
+                            <a href="{{ route('courses.show', $course['course']) }}" class="text-muted mr-3 d-flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                                 </svg>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-buttons mt-5">
+                <div class="nav-buttons mt-5 d-flex my-3">
                     @if($previousLesson)
                         <a wire:navigate.hover href="{{ route('courses.show.lesson', ['course' => $course['course'], 'lesson' => $previousLesson['slug']]) }}"
                            class="btn btn-primary d-flex" style="width: fit-content;">
