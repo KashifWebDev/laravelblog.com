@@ -3,6 +3,9 @@
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6248375401510068"
             crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads"
+            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -58,6 +61,9 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-6248375401510068">
+</amp-auto-ads>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3DK2P4B"
