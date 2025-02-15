@@ -19,8 +19,8 @@
                                         @foreach($tags as $tag)
                                             <li>
                                                 <div class="card-style-2 hover-up hover-neon wow animate__animated animate__fadeInUp" data-wow-delay="0s">
-                                                    <div class="card-image"><a href="{{ route('search', ['text' => $tag['name']]) }}" wire:navigate.hover><img src="{{ $tag['pic'] }}" alt="{{ $tag['name'] }}"></a></div>
-                                                    <div class="card-info"><a class="color-gray-500" href="{{ route('search', ['text' => $tag['name']]) }}" wire:navigate.hover>{{ $tag['name'] }}</a></div>
+                                                    <div class="card-image"><a href="{{ route('article.tutorials') }}" wire:navigate.hover><img src="{{ $tag['pic'] }}" alt="{{ $tag['name'] }}"></a></div>
+                                                    <div class="card-info"><a class="color-gray-500" href="{{ route('article.tutorials') }}" wire:navigate.hover>{{ $tag['name'] }}</a></div>
                                                 </div>
                                             </li>
                                         @endforeach

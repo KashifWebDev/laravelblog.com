@@ -232,7 +232,7 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
                             <div class="col-lg-4 col-md-6">
                                 <aside class="widget bt-location-widget">
                                     <div class="widget-content">
-                                        <a class="footer-logo" href="index09.html">
+                                        <a class="footer-logo" href="{{ route('home') }}"  wire:navigate.hover>
                                             <img src="{{ asset('logo.png') }}" alt="Footer Logo">
                                         </a>
                                         <div class="info-box">
