@@ -162,5 +162,39 @@ This version includes strategic keywords like "ultimate resource," "in-depth tut
 <script src="{{ asset('assets/js/vendors/jquery.progressScroll.min.js') }}"></script>
 <script src="{{ asset('assets/js/main.js?v=2.0') }}"></script>
 @livewireScripts
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6248375401510068"
+        crossorigin="anonymous"></script>
+<!-- Square add -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6248375401510068"
+     data-ad-slot="2467906349"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6248375401510068"
+        crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-6248375401510068"
+     data-ad-slot="7057888044"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6248375401510068"
+        crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-6248375401510068"
+     data-ad-slot="3152138910"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
